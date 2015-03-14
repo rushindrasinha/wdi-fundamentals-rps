@@ -24,25 +24,12 @@ function randomPlay() {
 
 // This function gets and returns the players move ||RS||
 function getPlayerMove(move) {
-    if (move === true) {
-
-    }
-    else {
-        move = getInput();
-    }
-
-    return move;
+    return move || getInput();
 }
 
 // This function gets and returns the computers move ||RS||
 function getComputerMove(move) {
-    if (move === true) {
-
-    }
-    else {
-        move = randomPlay();
-    }
-    return move;
+    return move || randomPlay();
 }
 
 // This function tracks and compares both player and computer input to return the winner ||RS||
@@ -63,13 +50,13 @@ function getWinner(playerMove,computerMove) {
         win = 'tie';
     }
 
-    console.log("You chose " + playerMove + " and your opponent chose " + computerMove + " so clearly the winner is ");
+    console.log("\nYou chose " + playerMove + " and your opponent chose " + computerMove + " so clearly the winner is ");
     return win;
 }
 
 // This function allows the game to continue till either player or computer have won 5 times ||RS||
 function playToFive() {
-    console.log("Let's play Rock, Paper, Scissors");
+    console.log("Let's play Rock, Paper, Scissors\n");
     var playerWins = 0;
     var computerWins = 0;
     var result;
@@ -86,13 +73,13 @@ function playToFive() {
         console.log('Computer!');
     }
     else {
-        console.log('tie!');
+        console.log('Tied!');
     }
 
-    console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
+    console.log("\nScoreboard\n You ::  " + playerWins + " & Computer :: " + computerWins + "\n");
 
     }
-
+    console.log("The Final Score is\n");
     return [playerWins, computerWins];
 }
 
